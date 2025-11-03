@@ -1,0 +1,22 @@
+Course Objectives:
+
+  * Understand the basic programming paradigms using Python 2 and Python 3
+
+  * Understand builtindatatypes, variables, functions and flow control 
+statements.
+
+  * Learn how to use string, tuple, list, bytearray, set, dictionary types effectively.
+
+  * Learn "pythonic" idioms and anti-idioms.
+
+  * Learn functions, modules and file I/O operations.
+
+  * Learn the basic concepts of OOP in Python.
+
+  * Process, network, automation
+
+* Web scraping and web formats – json, html, xml
+
+  * REST API development using Flask & consuming them
+
+ * Threads, process, & co-routines 
