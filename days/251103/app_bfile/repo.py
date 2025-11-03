@@ -1,3 +1,7 @@
+import pickle 
+
+
+
 employees = [] #employee is object of attr (id, name, job_title, salary)
 # list of objects -> list of dict -> save to file
 # read from file -> list of dict -> list of objs
