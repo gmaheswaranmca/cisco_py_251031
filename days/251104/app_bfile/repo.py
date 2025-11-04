@@ -1,13 +1,12 @@
-import pickle 
+import db_emp as db
 
-
-
-employees = [] #employee is object of attr (id, name, job_title, salary)
-# list of objects -> list of dict -> save to file
-# read from file -> list of dict -> list of objs
+employees = db.read_employees()  #employee is object of attr (id, name, job_title, salary)
+# list of objects -> save to file
+# read from file -> list of objs
 
 def add_employee(employee):
     employees.append(employee)
+    db.write_employees(employees)
     print('Employee Added Successfully')
 
 def search_employee(id): 
@@ -23,7 +22,8 @@ def update_employee(id, salary):
     if index != -1:
         employee = employees[index]
         employee.salary = salary
-        print('Employee Updated Successfully')
+        db.write_employees(employees)
+        print('Employee Updated Successfully')        
     else: 
         print('Employee Not Found.')
 
@@ -31,6 +31,7 @@ def delete_employee(id):
     index = search_employee(id) 
     if index != -1:
         employees.pop(index)
+        db.write_employees(employees)
         print('Employee Deleted Successfully')
     else: 
         print('Employee Not Found.')
