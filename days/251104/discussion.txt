@@ -1,0 +1,6 @@
+Assignment Today:
+
+Employee SQL App ->
+Ecommerce Product CRUD op App 
+
+product { id, name, description, price, stock, tags }
