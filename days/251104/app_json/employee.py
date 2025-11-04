@@ -11,3 +11,11 @@ class Employee:
     def __str__(self):
         #return f'{self.name}, {self.job_title}'
         return self.__repr__()
+    def to_dict(self):
+        return {'id' : self.id, 'name' : self.name, 'job_title' : self.job_title, 
+                'salary' : self.salary}
+    
+    @staticmethod 
+    def from_dict(employee_dict):
+        return Employee(employee_dict['id'], employee_dict['name'],
+                        employee_dict['job_title'], employee_dict['salary'])
