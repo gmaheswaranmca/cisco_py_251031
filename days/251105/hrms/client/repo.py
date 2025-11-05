@@ -28,7 +28,7 @@ def search_employee(id):
  
 def update_employee(id, salary):
     url = f'{BASE_URL}/employees/{id}'
-    body = {'salary' : 1201}
+    body = {'salary' : salary}
     response = requests.put(url, json = body)
     if response.status_code != 200:
         return None 
