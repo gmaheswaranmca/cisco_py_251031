@@ -1,0 +1,131 @@
+sql - repo [employee]
+    in mem - repo  
+        list of tuples / dicts / objects
+    file - repo
+        pickle / json 
+    sql - repo - rdbms
+        sqlite and sqlalchemy [orm] 
+
+logging 
+exception handling 
+
+web data 
+    - api data 
+        - apis [server / api provider / backend]
+        - consuming apis [client / api consumer / frontend]
+
+    - web site 
+        - scrap the data 
+            - public 
+            - private vs public 
+            - private 
+
+today plan:
+    how to define apis [backend app] using flask framework 
+    flask competitors : django / fastapi wrt py 
+        java : spring 
+        js : express js 
+    consuming the apis 
+        - test apis using client tool 
+            like postman / vsc thunder client 
+        - using the apis in the app 
+    -> emp app 
+        - server - api provider 
+        - client - api consumer 
+        - enterprise rich app 
+            - mail sending after emp creation 
+            - handle exceptions 
+                - custom exceptions 
+            - unit testing 
+learning Web APIs:
+    - jsonplaceholder 
+    - test using vsc thunder client [ext]
+
+    - todos resource management wrt jsonplaceholder using thunder client / postman 
+        API End Points - URL (noun) + http request method (verb)
+            Base URL = https://jsonplaceholder.typicode.com
+        crud ops wrt todos 
+            - read all todos    GET /todos              array of todo js objects
+            - read todo by id   GET /todos/12           one todo js object 
+            - create todo       POST /todos             request : new todo js object -> response : created todo js object 
+                request / json / body :
+                {
+                    "title" : "python api consuming learning",
+                    "completed" : false,
+                    "userId" : 1
+                }
+                response : status = 201 CREATED 
+                {
+                "title": "python api consuming learning",
+                "completed": false,
+                "userId": 1,
+                "id": 201
+                }
+            - update todo     PUT   /todos/2        request : updatable todo obj -> response : updated todo js obj 
+            req : {
+                "userId": 1,
+                "id": 2,
+                "title": "quis ut nam facilis et officia qui",
+                "completed": true
+            }
+            res: status = 200 OK 
+            {
+            "userId": 1,
+            "id": 2,
+            "title": "quis ut nam facilis et officia qui",
+            "completed": true
+            }
+            - delete todo       DELETE /todos/2     todo will be deleted 
+        
+        REST API resource management - http based web service 
+            GET  == read | query resource(s)
+                - read all 
+                - read by id 
+            POST == create resource 
+                request body will take one todo js object 
+                response we will get the created todo js object  
+            PUT == update resource 
+                request body will take one edited todo js object 
+                response we will get the updated todo js object 
+            DELETE == delete the resource 
+                for given resource id, the todo will be deleted 
+                res : status = 200 OK 
+            ---
+            PATCH - partial update 
+            ---
+            all others will be used by browser and server 
+                OPTIONS 
+                HEAD 
+--- --- --- 
+
+flask - py 'framework / library' for 'web app dev / web api dev'
+it is not std module 
+to install flask:
+    pip install flask 
+
+    We will develop dummy employee resource management api end points
+        URL = http://localhost:5000
+        read all        GET     /employees 
+        read by id      GET     /employees/101
+        create          POST    /employees          request emp obj -> response created emp obj 
+        update          PUT     /employees/101      request edited emp obj -> response updated emp obj
+        delete          DELETE  /employees/101      
+    
+    how to develop the server / backend app 
+    1. Define the application object 
+    2. Define the API End Points / Handlers 
+    3. Run the application using application obj 
+
+    after written the backend app - I 
+    1. run the app                      - II 
+        python app_file_name.py 
+    2. Test the api using vsc thunder client  - III 
+        or 
+        Consume the apis (Later)
+
+    status 
+        200 OK 
+        201 CREATED 
+        404 NOT FOUND 
+        500 INTERNAL SERVER ERROR 
+        
