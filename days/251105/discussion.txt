@@ -145,6 +145,12 @@ to install flask:
                 + repo.py                   will use models.py
                 + routes.py                 will use repo.py 
             + run_server.py                 will use server->routes.py
+            + mini_client.py                consume apis 
+
+        we tested the server app using thunder client 
+        we will consume the server app apis using python 
+            + mini_client.py
+                request module -> pip install requests
     ==> 
         erich_app 
             - mail sending after employee created
