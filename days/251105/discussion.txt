@@ -128,4 +128,28 @@ to install flask:
         201 CREATED 
         404 NOT FOUND 
         500 INTERNAL SERVER ERROR 
-        
+
+
+    fake_emp_server.py
+        -> single file app takes the in-mem db 
+
+    ===> app 
+        sql emp database 
+            - sqlalchemy - flask_sqlalchemy 
+            "pip install Flask-SQLAlchemy"
+
+        /hrms       project name 
+            /server 
+                + __init__.py               empty file 
+                + models.py 
+                + repo.py                   will use models.py
+                + routes.py                 will use repo.py 
+            + run_server.py                 will use server->routes.py
+    ==> 
+        erich_app 
+            - mail sending after employee created
+            - custom exceptions  
+            - logging 
+                infor, exc 
+                    only for create and read_by_id 
+            - unit test for create and read_by_id 
