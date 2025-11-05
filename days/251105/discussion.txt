@@ -151,6 +151,21 @@ to install flask:
         we will consume the server app apis using python 
             + mini_client.py
                 request module -> pip install requests
+
+        We will have client app also:
+        /hrms       project name 
+            /server 
+                + __init__.py               empty file 
+                + models.py 
+                + repo.py                   will use models.py
+                + routes.py                 will use repo.py 
+            + run_server.py                 will use server->routes.py
+            + mini_client.py                consume apis
+            /client
+                + __init__.py
+                + repo.py                   consumes apis and crud op fns 
+            + run_client.py                 console app 
+
     ==> 
         erich_app 
             - mail sending after employee created

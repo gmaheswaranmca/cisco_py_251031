@@ -12,6 +12,7 @@ print(f'Employees List:\n{employees}')
 creatable_emp = {'name' : 'Dravid', 'job_title' : 'Old Coach', 'salary' : 1200}
 url = f'{BASE_URL}/employees'
 response = requests.post(url, json = creatable_emp)
+print(response.status_code)
 created_emp = response.json()
 print(f'Created Employee:{created_emp}')
 
