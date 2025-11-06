@@ -76,3 +76,35 @@ WHERE employees.id = ?
 2025-11-06 10:39:59,334 [INFO]  * Debugger PIN: 141-026-274
 2025-11-06 10:40:16,727 [INFO]  * Detected change in 'C:\\mywork\\source\\workspaces\\cisco_py_251031\\days\\251106\\hrms_erich\\server\\routes.py', reloading
 2025-11-06 10:40:17,058 [INFO]  * Restarting with stat
+2025-11-06 10:40:44,439 [INFO] BEGIN (implicit)
+2025-11-06 10:40:44,454 [INFO] PRAGMA main.table_info("employees")
+2025-11-06 10:40:44,486 [INFO] [raw sql] ()
+2025-11-06 10:40:44,533 [INFO] COMMIT
+2025-11-06 10:40:44,675 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-06 10:40:44,675 [INFO] [33mPress CTRL+C to quit[0m
+2025-11-06 10:40:44,675 [INFO]  * Restarting with stat
+2025-11-06 10:40:47,256 [INFO] BEGIN (implicit)
+2025-11-06 10:40:47,256 [INFO] PRAGMA main.table_info("employees")
+2025-11-06 10:40:47,256 [INFO] [raw sql] ()
+2025-11-06 10:40:47,256 [INFO] COMMIT
+2025-11-06 10:40:47,308 [WARNING]  * Debugger is active!
+2025-11-06 10:40:47,321 [INFO]  * Debugger PIN: 141-026-274
+2025-11-06 10:41:22,202 [INFO] BEGIN (implicit)
+2025-11-06 10:41:22,208 [INFO] INSERT INTO employees (name, job_title, salary) VALUES (?, ?, ?)
+2025-11-06 10:41:22,209 [INFO] [generated in 0.00119s] ('Gambhir', 'Coach', 60000.0)
+2025-11-06 10:41:22,211 [INFO] COMMIT
+2025-11-06 10:41:22,223 [INFO] Employee Added Successfully
+2025-11-06 10:41:22,223 [INFO] BEGIN (implicit)
+2025-11-06 10:41:22,223 [INFO] SELECT employees.id AS employees_id, employees.name AS employees_name, employees.job_title AS employees_job_title, employees.salary AS employees_salary 
+FROM employees 
+WHERE employees.id = ?
+2025-11-06 10:41:22,223 [INFO] [generated in 0.00081s] (2,)
+2025-11-06 10:41:22,238 [INFO] SELECT employees.id AS employees_id, employees.name AS employees_name, employees.job_title AS employees_job_title, employees.salary AS employees_salary 
+FROM employees 
+WHERE employees.id = ?
+ LIMIT ? OFFSET ?
+2025-11-06 10:41:22,238 [INFO] [generated in 0.00094s] (2, 1, 0)
+2025-11-06 10:41:22,246 [INFO] Read employee for given id.
+2025-11-06 10:41:27,191 [INFO] ROLLBACK
+2025-11-06 10:41:27,191 [INFO] 127.0.0.1 - - [06/Nov/2025 10:41:27] "[35m[1mPOST /employees HTTP/1.1[0m" 201 -
