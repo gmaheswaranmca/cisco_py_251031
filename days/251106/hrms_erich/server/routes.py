@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from flask import Flask, request, jsonify 
 
 import server.repo as repo 
@@ -45,7 +47,10 @@ def create_employee():
         return jsonify({'error' : 'Server Error'}), 500
 
     #sending creation mail
-    subject = f'{created_employee.name} is created'
+    now = datetime.now()
+    date_time_str = now.strftime("%Y-%m-%d %H:%M:%S")
+
+    subject = f'[{date_time_str}] - {created_employee.name} is created'
     body = f'''ID : {created_employee.id}
 Name: {created_employee.name}
 Job Title: {created_employee.job_title}

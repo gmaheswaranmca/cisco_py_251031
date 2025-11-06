@@ -50,3 +50,29 @@ WHERE employees.id = ?
 2025-11-06 10:34:50,693 [INFO] Read employee for given id.
 2025-11-06 10:34:55,184 [INFO] ROLLBACK
 2025-11-06 10:34:55,184 [INFO] 127.0.0.1 - - [06/Nov/2025 10:34:55] "[35m[1mPOST /employees HTTP/1.1[0m" 201 -
+2025-11-06 10:39:35,858 [INFO]  * Detected change in 'C:\\mywork\\source\\workspaces\\cisco_py_251031\\days\\251106\\hrms_erich\\server\\routes.py', reloading
+2025-11-06 10:39:36,081 [INFO]  * Restarting with stat
+2025-11-06 10:39:38,274 [INFO] BEGIN (implicit)
+2025-11-06 10:39:38,275 [INFO] PRAGMA main.table_info("employees")
+2025-11-06 10:39:38,278 [INFO] [raw sql] ()
+2025-11-06 10:39:38,283 [INFO] COMMIT
+2025-11-06 10:39:38,321 [WARNING]  * Debugger is active!
+2025-11-06 10:39:38,332 [INFO]  * Debugger PIN: 141-026-274
+2025-11-06 10:39:47,912 [INFO]  * Detected change in 'C:\\mywork\\source\\workspaces\\cisco_py_251031\\days\\251106\\hrms_erich\\server\\routes.py', reloading
+2025-11-06 10:39:48,201 [INFO]  * Restarting with stat
+2025-11-06 10:39:52,137 [INFO] BEGIN (implicit)
+2025-11-06 10:39:52,137 [INFO] PRAGMA main.table_info("employees")
+2025-11-06 10:39:52,137 [INFO] [raw sql] ()
+2025-11-06 10:39:52,157 [INFO] COMMIT
+2025-11-06 10:39:52,185 [WARNING]  * Debugger is active!
+2025-11-06 10:39:52,200 [INFO]  * Debugger PIN: 141-026-274
+2025-11-06 10:39:56,765 [INFO]  * Detected change in 'C:\\mywork\\source\\workspaces\\cisco_py_251031\\days\\251106\\hrms_erich\\server\\routes.py', reloading
+2025-11-06 10:39:57,053 [INFO]  * Restarting with stat
+2025-11-06 10:39:59,277 [INFO] BEGIN (implicit)
+2025-11-06 10:39:59,278 [INFO] PRAGMA main.table_info("employees")
+2025-11-06 10:39:59,281 [INFO] [raw sql] ()
+2025-11-06 10:39:59,284 [INFO] COMMIT
+2025-11-06 10:39:59,324 [WARNING]  * Debugger is active!
+2025-11-06 10:39:59,334 [INFO]  * Debugger PIN: 141-026-274
+2025-11-06 10:40:16,727 [INFO]  * Detected change in 'C:\\mywork\\source\\workspaces\\cisco_py_251031\\days\\251106\\hrms_erich\\server\\routes.py', reloading
+2025-11-06 10:40:17,058 [INFO]  * Restarting with stat
