@@ -1,0 +1,22 @@
+API - if you get the data, so fine : legimate
+Data from public site via program  
+    - scrap
+        http://quotes.toscrape.com
+        http://books.toscrape.com/catalogue
+        https://www.bbc.com/
+
+
+        code to scrap:
+        1. response = requests.get(url)
+            response.text will give you html text of the web page / 
+        2. soup = BeautifulSoup(response.text, "html.parser", from_encoding="utf-8")
+        for q in soup.find_all("div", class_="quote"):
+        text = q.find("span", class_="text").get_text(strip=True)
+        author = q.find("small", class_="author").get_text(strip=True)
+        tags = [tag.get_text(strip=True) for tag in q.find_all("a", class_="tag")]
+
+        quotes.append({
+            "quote": text,
+            "author": author,
+            "tags": tags
+        })
