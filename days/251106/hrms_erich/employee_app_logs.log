@@ -1,0 +1,52 @@
+2025-11-06 10:32:40,767 [INFO] BEGIN (implicit)
+2025-11-06 10:32:40,782 [INFO] PRAGMA main.table_info("employees")
+2025-11-06 10:32:40,782 [INFO] [raw sql] ()
+2025-11-06 10:32:40,782 [INFO] PRAGMA temp.table_info("employees")
+2025-11-06 10:32:40,782 [INFO] [raw sql] ()
+2025-11-06 10:32:40,782 [INFO] 
+CREATE TABLE employees (
+	id INTEGER NOT NULL, 
+	name VARCHAR(255) NOT NULL, 
+	job_title VARCHAR(150) NOT NULL, 
+	salary FLOAT NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+2025-11-06 10:32:40,798 [INFO] [no key 0.00053s] ()
+2025-11-06 10:32:40,798 [INFO] COMMIT
+2025-11-06 10:32:40,923 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-06 10:32:40,923 [INFO] [33mPress CTRL+C to quit[0m
+2025-11-06 10:32:40,939 [INFO]  * Restarting with stat
+2025-11-06 10:32:42,608 [INFO] BEGIN (implicit)
+2025-11-06 10:32:42,609 [INFO] PRAGMA main.table_info("employees")
+2025-11-06 10:32:42,613 [INFO] [raw sql] ()
+2025-11-06 10:32:42,619 [INFO] COMMIT
+2025-11-06 10:32:42,732 [WARNING]  * Debugger is active!
+2025-11-06 10:32:42,748 [INFO]  * Debugger PIN: 141-026-274
+2025-11-06 10:34:18,777 [INFO] BEGIN (implicit)
+2025-11-06 10:34:18,796 [INFO] SELECT employees.id AS employees_id, employees.name AS employees_name, employees.job_title AS employees_job_title, employees.salary AS employees_salary 
+FROM employees
+2025-11-06 10:34:18,861 [INFO] [generated in 0.07834s] ()
+2025-11-06 10:34:18,982 [INFO] Read all employees.
+2025-11-06 10:34:18,982 [INFO] ROLLBACK
+2025-11-06 10:34:19,047 [INFO] 127.0.0.1 - - [06/Nov/2025 10:34:19] "GET /employees HTTP/1.1" 200 -
+2025-11-06 10:34:50,656 [INFO] BEGIN (implicit)
+2025-11-06 10:34:50,656 [INFO] INSERT INTO employees (name, job_title, salary) VALUES (?, ?, ?)
+2025-11-06 10:34:50,656 [INFO] [generated in 0.00075s] ('Dravid', 'Old Coach', 1200.0)
+2025-11-06 10:34:50,673 [INFO] COMMIT
+2025-11-06 10:34:50,673 [INFO] Employee Added Successfully
+2025-11-06 10:34:50,673 [INFO] BEGIN (implicit)
+2025-11-06 10:34:50,673 [INFO] SELECT employees.id AS employees_id, employees.name AS employees_name, employees.job_title AS employees_job_title, employees.salary AS employees_salary 
+FROM employees 
+WHERE employees.id = ?
+2025-11-06 10:34:50,693 [INFO] [generated in 0.00551s] (1,)
+2025-11-06 10:34:50,693 [INFO] SELECT employees.id AS employees_id, employees.name AS employees_name, employees.job_title AS employees_job_title, employees.salary AS employees_salary 
+FROM employees 
+WHERE employees.id = ?
+ LIMIT ? OFFSET ?
+2025-11-06 10:34:50,693 [INFO] [generated in 0.00063s] (1, 1, 0)
+2025-11-06 10:34:50,693 [INFO] Read employee for given id.
+2025-11-06 10:34:55,184 [INFO] ROLLBACK
+2025-11-06 10:34:55,184 [INFO] 127.0.0.1 - - [06/Nov/2025 10:34:55] "[35m[1mPOST /employees HTTP/1.1[0m" 201 -

@@ -2,3 +2,4 @@
 /instance
 /client/__pycache__
 /tests/__pycache__
+/mailer/__pycache__
