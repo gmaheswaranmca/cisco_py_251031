@@ -1,12 +1,11 @@
-from concurrent.futures import ThreadPoolExecutor, as_completed
+import multiprocessing
 import requests 
 from bs4 import BeautifulSoup
 
-def scrap_quote_page(url):
+def scrap_quote_page(url, quotes):
     response = requests.get(url) 
 
     soup = BeautifulSoup(response.text, "html.parser", from_encoding="utf-8")
-    quotes = []
     for quote_element in soup.find_all("div", class_="quote"):
         text = quote_element.find("span", class_="text").get_text(strip=True)
         author = quote_element.find("small", class_="author").get_text(strip=True)
@@ -17,7 +16,6 @@ def scrap_quote_page(url):
             "author": author,
             "tags": tags})
         
-    return quotes 
 
 def batch_quote_scraper():
     urls = [ 'http://quotes.toscrape.com/', 
@@ -25,17 +23,22 @@ def batch_quote_scraper():
             'http://quotes.toscrape.com/page/3/',
             'http://quotes.toscrape.com/page/4/',
             'http://quotes.toscrape.com/page/5/']
-    results = []
-    with ThreadPoolExecutor(max_workers=5) as executor:
-        future_to_url = {executor.submit(scrap_quote_page, url): url for url in urls}
-        for future in as_completed(future_to_url):
-            url = future_to_url[future]
-            try:
-                data = future.result()
-                results.extend(data)
-                print(f" Scraped {len(data)} items from {url}")
-            except Exception as e:
-                print(f" Error scraping {url}: {e}")
+    manager = multiprocessing.Manager()
+    quotes = manager.list()  # shared list across processes
+    processes = []
+
+    # Start a process for each URL
+    for url in urls:
+        p = multiprocessing.Process(target=scrap_quote_page, args=(url, quotes))
+        processes.append(p)
+        p.start()
+
+    # Wait for all processes
+    for p in processes:
+        p.join()
+        
+    results = list(quotes)
     return results
 
-print(batch_quote_scraper())
+if __name__ == "__main__":
+    print(batch_quote_scraper())

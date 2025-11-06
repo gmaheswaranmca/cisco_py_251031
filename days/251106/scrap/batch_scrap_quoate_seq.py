@@ -19,23 +19,15 @@ def scrap_quote_page(url):
         
     return quotes 
 
-def batch_quote_scraper():
+def scrap_quote_pages():
     urls = [ 'http://quotes.toscrape.com/', 
             'http://quotes.toscrape.com/page/2/',
             'http://quotes.toscrape.com/page/3/',
             'http://quotes.toscrape.com/page/4/',
             'http://quotes.toscrape.com/page/5/']
-    results = []
-    with ThreadPoolExecutor(max_workers=5) as executor:
-        future_to_url = {executor.submit(scrap_quote_page, url): url for url in urls}
-        for future in as_completed(future_to_url):
-            url = future_to_url[future]
-            try:
-                data = future.result()
-                results.extend(data)
-                print(f" Scraped {len(data)} items from {url}")
-            except Exception as e:
-                print(f" Error scraping {url}: {e}")
-    return results
+    result = []
+    for url in urls:
+        result.extend(scrap_quote_page(url))
+    print(result)
 
-print(batch_quote_scraper())
+scrap_quote_pages()
